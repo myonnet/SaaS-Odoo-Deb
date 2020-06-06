@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="saas_crm_menu"
+              name="Saas"
+              parent="crm.crm_menu_root"
+              sequence="100"
+              groups="base.group_system"/>
+
+</odoo>
