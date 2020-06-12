@@ -39,7 +39,8 @@ RUN apt-get update \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
 RUN pip3 install forex-python \
-                 pycountry
+                 pycountry \
+		 python-stdnum
 
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
