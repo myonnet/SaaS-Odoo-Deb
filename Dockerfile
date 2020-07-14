@@ -1,4 +1,4 @@
-FROM onnetdocker20/pivotino:base
+FROM pivotino/pivotino:base
 
 COPY ./extra-addons /mnt/extra-addons
 
