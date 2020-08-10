@@ -1,4 +1,4 @@
-FROM pivotino/pivotino:base
+FROM myonnet/odoo:v13.0-2020.08.05
 
 COPY ./extra-addons /mnt/extra-addons
 
