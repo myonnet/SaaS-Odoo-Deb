@@ -38,10 +38,6 @@ RUN apt-get update \
         && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
-RUN pip3 install forex-python \
-                 pycountry \
-		 python-stdnum
-
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
         && GNUPGHOME="$(mktemp -d)" \
@@ -65,9 +61,9 @@ RUN apt-get update
 
 RUN apt-get install -y git
 #CHANGE HERE
-RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git 
+RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git --branch odoo_v13.0-2020.08.05 --single-branch
 #CHANGE HERE
-RUN apt-get -y install --no-install-recommends ./SaaS-Odoo-Deb/odoo.deb
+RUN apt-get -y install --no-install-recommends ./SaaS-Odoo-Deb/odoo_v13.0-2020.08.05.deb
 
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
