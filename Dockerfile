@@ -33,6 +33,8 @@ RUN apt-get update \
             procps \
             vim \
             iputils-ping \
+            python-numpy \
+            python3-numpy \
         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
         && echo '7e35a63f9db14f93ec7feeb0fce76b30c08f2057 wkhtmltox.deb' | sha1sum -c - \
         && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
@@ -65,9 +67,9 @@ RUN apt-get update
 
 RUN apt-get install -y git
 #CHANGE HERE
-RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git 
+RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git --branch odoo_v14.0-2020-11-16 --single-branch
 #CHANGE HERE
-RUN apt-get -y install --no-install-recommends ./SaaS-Odoo-Deb/odoo.deb
+RUN apt-get -y install --no-install-recommends ./SaaS-Odoo-Deb/odoo_14.0.20201209.deb
 
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
