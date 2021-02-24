@@ -30,6 +30,7 @@ RUN apt-get update \
             python3-watchdog \
             python3-xlrd \
             python3-xlwt \
+            python3-cryptography \
             xz-utils \
             procps \
             vim \
@@ -45,7 +46,6 @@ RUN pip3 install forex-python \
                  pycountry \
 		 python-stdnum
 
-RUN pip install cryptography
 
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
