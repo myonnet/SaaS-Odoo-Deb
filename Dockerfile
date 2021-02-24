@@ -17,6 +17,7 @@ RUN apt-get update \
             libssl-dev \
             node-less \
             npm \
+            python-pip \
             python3-num2words \
             python3-pip \
             python3-phonenumbers \
@@ -43,6 +44,8 @@ RUN apt-get update \
 RUN pip3 install forex-python \
                  pycountry \
 		 python-stdnum
+
+RUN pip install cryptography
 
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
