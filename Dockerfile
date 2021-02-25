@@ -1,4 +1,4 @@
-FROM pivotino/pivotino:base_v14_4
+FROM pivotino/pivotino:base_v14_5
 
 COPY ./extra-addons /mnt/extra-addons
 
