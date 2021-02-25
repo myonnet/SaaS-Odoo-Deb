@@ -17,6 +17,7 @@ RUN apt-get update \
             libssl-dev \
             node-less \
             npm \
+            python-pip \
             python3-num2words \
             python3-pip \
             python3-phonenumbers \
@@ -29,6 +30,7 @@ RUN apt-get update \
             python3-watchdog \
             python3-xlrd \
             python3-xlwt \
+            python3-cryptography \
             xz-utils \
             procps \
             vim \
