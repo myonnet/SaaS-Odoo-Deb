@@ -68,11 +68,13 @@ RUN npm install -g rtlcss
 
 RUN apt-get update
 
-RUN apt-get install -y git
+#RUN apt-get install -y git
 #CHANGE HERE
-RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git 
+#RUN git clone --progress --verbose https://github.com/myonnet/SaaS-Odoo-Deb.git 
 #CHANGE HERE
-RUN apt-get -y install --no-install-recommends ./SaaS-Odoo-Deb/odoo.deb
+COPY odoo.deb /
+
+RUN apt-get -y install --no-install-recommends ./odoo.deb
 
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
